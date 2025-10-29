@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get Your Ham Radio License - RARS</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.7;
+            color: #1f2937;
+            background-color: #f9fafb;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
+            color: white;
+            padding: 3rem 1rem;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .header .subtitle {
+            font-size: 1.3rem;
+            opacity: 0.95;
+            font-weight: 300;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        .hero {
+            background: white;
+            margin: -2rem auto 2rem;
+            max-width: 900px;
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .hero h2 {
+            color: #1e40af;
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            color: #4b5563;
+            margin-bottom: 1rem;
+        }
+
+        .steps {
+            margin-top: 2rem;
+        }
+
+        .step {
+            background: white;
+            border-radius: 8px;
+            padding: 2rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.08);
+            border-left: 5px solid #3b82f6;
+        }
+
+        .step-number {
+            display: inline-block;
+            background: #3b82f6;
+            color: white;
+            width: 40px;
+            height: 40px;
+            line-height: 40px;
+            text-align: center;
+            border-radius: 50%;
+            font-weight: bold;
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+        }
+
+        .step h3 {
+            color: #1e40af;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .step p {
+            margin-bottom: 1rem;
+            font-size: 1.05rem;
+        }
+
+        .detail-box {
+            background: #f0f9ff;
+            border-radius: 6px;
+            padding: 1.25rem;
+            margin: 1rem 0;
+        }
+
+        .detail-box h4 {
+            color: #1e40af;
+            margin-bottom: 0.75rem;
+            font-size: 1.1rem;
+        }
+
+        .detail-box ul {
+            margin-left: 1.5rem;
+        }
+
+        .detail-box li {
+            margin-bottom: 0.5rem;
+        }
+
+        .button {
+            display: inline-block;
+            background: #3b82f6;
+            color: white;
+            padding: 1rem 2rem;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: background 0.3s;
+            margin-top: 1rem;
+        }
+
+        .button:hover {
+            background: #2563eb;
+        }
+
+        .button-large {
+            font-size: 1.2rem;
+            padding: 1.25rem 2.5rem;
+        }
+
+        .alert {
+            background: #fef3c7;
+            border-left: 4px solid #f59e0b;
+            padding: 1rem 1.25rem;
+            border-radius: 6px;
+            margin-bottom: 2rem;
+        }
+
+        .alert strong {
+            color: #92400e;
+        }
+
+        .info-box {
+            background: #e0f2fe;
+            border-left: 4px solid #0ea5e9;
+            padding: 1rem 1.25rem;
+            border-radius: 6px;
+            margin: 1rem 0;
+        }
+
+        .quick-facts {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+
+        .fact {
+            background: #f0f9ff;
+            padding: 1.25rem;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .fact-label {
+            font-size: 0.9rem;
+            color: #6b7280;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 0.5rem;
+        }
+
+        .fact-value {
+            font-size: 1.4rem;
+            font-weight: bold;
+            color: #1e40af;
+        }
+
+        .contact-box {
+            background: #1e40af;
+            color: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 1.5rem 0;
+        }
+
+        .contact-box h4 {
+            margin-bottom: 0.75rem;
+            font-size: 1.2rem;
+        }
+
+        .contact-box a {
+            color: #93c5fd;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .contact-box a:hover {
+            text-decoration: underline;
+        }
+
+        .section {
+            background: white;
+            border-radius: 8px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.08);
+        }
+
+        .section h2 {
+            color: #1e40af;
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.75rem;
+            border-bottom: 2px solid #e5e7eb;
+        }
+
+        .footer {
+            background: #1f2937;
+            color: white;
+            text-align: center;
+            padding: 2rem 1rem;
+            margin-top: 3rem;
+        }
+
+        .footer a {
+            color: #93c5fd;
+            text-decoration: none;
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 1.8rem;
+            }
+
+            .header .subtitle {
+                font-size: 1.1rem;
+            }
+
+            .hero {
+                margin-top: -1rem;
+                padding: 1.5rem;
+            }
+
+            .step {
+                padding: 1.5rem;
+            }
+
+            .quick-facts {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        strong {
+            color: #1e40af;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <h1>Get Your Ham Radio License</h1>
+        <p class="subtitle">Everything you need to become a licensed amateur radio operator</p>
+    </header>
+
+    <div class="container">
+        <div class="hero">
+            <h2>Welcome to RARS Licensing!</h2>
+            <p>Getting your Technician license is easier than you think. We'll teach you everything you need to know, help you prepare for the exam, and administer the test—all at no cost to you.</p>
+            <p><strong>No RARS membership required. Everyone is welcome!</strong></p>
+        </div>
+
+        <div class="alert">
+            <strong>Note:</strong> We are still administering exams during the FCC government shutdown. A workaround for FRN registration is available—details provided when you sign up.
+        </div>
+
+        <div class="steps">
+            <!-- STEP 1: SIGN UP FOR CLASS -->
+            <div class="step">
+                <div class="step-number">1</div>
+                <h3>Sign Up for Class</h3>
+                <p>Our free Technician License class runs over three consecutive Saturday mornings. We teach you everything you need to pass the exam.</p>
+
+                <div class="quick-facts">
+                    <div class="fact">
+                        <div class="fact-label">Cost</div>
+                        <div class="fact-value">FREE</div>
+                    </div>
+                    <div class="fact">
+                        <div class="fact-label">Schedule</div>
+                        <div class="fact-value">3 Saturdays</div>
+                    </div>
+                    <div class="fact">
+                        <div class="fact-label">Time</div>
+                        <div class="fact-value">8:30 AM - 12:35 PM</div>
+                    </div>
+                </div>
+
+                <div class="detail-box">
+                    <h4>Next Class</h4>
+                    <p>Fall 2025 class just completed. Watch for announcements about our next session (typically offered twice yearly—winter and late summer/fall).</p>
+                </div>
+
+                <div class="detail-box">
+                    <h4>What You'll Need</h4>
+                    <p><strong>ARRL Ham Radio License Manual, 5th Edition</strong></p>
+                    <p>Valid for exams through June 30, 2026. Available from:</p>
+                    <ul>
+                        <li>ARRL website (no membership required)</li>
+                        <li>Amazon</li>
+                    </ul>
+                    <p style="margin-top: 0.75rem;"><em>Make sure you get the 5th edition!</em></p>
+                </div>
+
+                <div class="contact-box">
+                    <h4>Register for the Next Class</h4>
+                    <p>Contact: <strong>Denny Oestreich</strong>, RARS Education Director</p>
+                    <p>Email: <a href="mailto:OestreichD@AOL.com">OestreichD@AOL.com</a></p>
+                    <p style="margin-top: 0.5rem; font-size: 0.95rem;">Class size is limited, so sign up early!</p>
+                </div>
+            </div>
+
+            <!-- STEP 2: GET YOUR FRN -->
+            <div class="step">
+                <div class="step-number">2</div>
+                <h3>Get Your FCC Registration Number (FRN)</h3>
+                <p>You need an FRN before you can take any exam. This is your unique identifier with the FCC.</p>
+
+                <div class="info-box">
+                    <strong>Already have a GMRS or other FCC license?</strong> You already have an FRN—it's on your license. Skip to Step 3!
+                </div>
+
+                <div class="detail-box">
+                    <h4>How to Get an FRN</h4>
+                    <ul>
+                        <li>Apply online directly from the FCC website</li>
+                        <li>Process is straightforward but a bit tedious</li>
+                        <li><strong>Do this BEFORE your exam date</strong></li>
+                        <li>FCC website is often down on evenings/weekends (when we hold exams)</li>
+                    </ul>
+                    <p style="margin-top: 1rem;"><strong>Important:</strong> We cannot administer your exam without a valid FRN.</p>
+                </div>
+
+                <a href="#" class="button">FRN Application Guide</a>
+            </div>
+
+            <!-- STEP 3: SCHEDULE YOUR EXAM -->
+            <div class="step">
+                <div class="step-number">3</div>
+                <h3>Schedule Your Exam</h3>
+                <p>When you're ready to test, sign up for one of our regular exam sessions.</p>
+
+                <div class="detail-box">
+                    <h4>Regular RARS Test Sessions</h4>
+                    <p><strong>When:</strong> Fourth Tuesday of even-numbered months<br>
+                    (February, April, June, August, October, December)<br>
+                    6:00 PM - 7:30 PM</p>
+                    <p style="margin-top: 0.75rem;"><strong>Where:</strong> Ridge Road Baptist Church<br>
+                    2011 Ridge Road, Raleigh, NC 27607</p>
+                    <p style="margin-top: 0.75rem;"><em>Tests are held before our monthly RARS Gathering, so you can stay and socialize after your exam!</em></p>
+                </div>
+
+                <div class="info-box">
+                    <strong>Note:</strong> If the monthly Gathering is canceled (holiday conflict, etc.), there's no exam session that month.
+                </div>
+
+                <a href="#" class="button button-large">Register for Next Exam</a>
+                <p style="margin-top: 1rem;"><em>Pre-registration strongly encouraged. Select the 6:00 PM session on your chosen date.</em></p>
+
+                <div class="detail-box" style="margin-top: 1.5rem;">
+                    <h4>Other Testing Opportunities</h4>
+                    <p>We also administer exams at:</p>
+                    <ul>
+                        <li>Annual RARSfest</li>
+                        <li>Cary Swapfest</li>
+                    </ul>
+                    <p style="margin-top: 0.75rem;">Check event flyers for specific test session details.</p>
+                </div>
+            </div>
+
+            <!-- STEP 4: TAKE YOUR EXAM -->
+            <div class="step">
+                <div class="step-number">4</div>
+                <h3>Take Your Exam</h3>
+                <p>Show up prepared with everything you need for a smooth testing experience.</p>
+
+                <div class="detail-box">
+                    <h4>What to Bring</h4>
+                    <ul>
+                        <li><strong>Your FCC Registration Number (FRN)</strong></li>
+                        <li>Valid photo ID</li>
+                        <li>Your email address and phone number</li>
+                        <li>Pencils/pens</li>
+                        <li>Calculator (optional, basic functions only)</li>
+                    </ul>
+                </div>
+
+                <div class="quick-facts">
+                    <div class="fact">
+                        <div class="fact-label">Exam Fee</div>
+                        <div class="fact-value">$0</div>
+                    </div>
+                    <div class="fact">
+                        <div class="fact-label">FCC License Fee</div>
+                        <div class="fact-value">$35</div>
+                    </div>
+                </div>
+
+                <div class="detail-box">
+                    <h4>About the $35 FCC Fee</h4>
+                    <p>If you pass and receive a <strong>new license</strong>, you'll pay $35 to the U.S. Treasury before your license is issued. The FCC will email you payment instructions.</p>
+                    <p style="margin-top: 0.75rem;"><strong>No fee for:</strong> Upgrades to existing licenses or address changes</p>
+                </div>
+
+                <div class="info-box">
+                    <strong>All FCC correspondence is via email.</strong> Make sure you provide a valid email address. We'll also need your phone number in case we need to contact you about your application.
+                </div>
+            </div>
+
+            <!-- STEP 5: GET ON THE AIR -->
+            <div class="step">
+                <div class="step-number">5</div>
+                <h3>Get Your License & Get On The Air!</h3>
+                <p>After passing your exam, the FCC will email you when your license is ready. Then the fun begins!</p>
+
+                <div class="detail-box">
+                    <h4>What You Can Do With Your Technician License</h4>
+                    <ul>
+                        <li>Communicate with other hams around the world</li>
+                        <li>Talk to astronauts on the International Space Station</li>
+                        <li>Participate in emergency communications</li>
+                        <li>Join local repeater networks</li>
+                        <li>Experiment with digital modes and satellites</li>
+                        <li>Attend RARS meetings and events</li>
+                    </ul>
+                </div>
+
+                <p style="font-size: 1.1rem; margin-top: 1.5rem;"><strong>Welcome to amateur radio! 73 (best regards) and see you on the air!</strong></p>
+            </div>
+        </div>
+
+        <!-- ADDITIONAL INFO SECTION -->
+        <div class="section">
+            <h2>Can't Make Our Schedule?</h2>
+            <p>Several other Volunteer Examiner teams operate in the Triangle area with different schedules.</p>
+            
+            <div class="detail-box">
+                <h4>Find Other Test Sessions</h4>
+                <p><strong>HamStudy.org</strong> - Lists sessions from all VE coordinators<br>
+                <a href="https://hamstudy.org/sessions" style="color: #2563eb;">Search HamStudy →</a></p>
+                <p style="margin-top: 1rem;"><strong>ARRL Exam Search</strong> - Find ARRL-accredited test sessions<br>
+                <a href="http://www.arrl.org/find-an-amateur-radio-license-exam-session" style="color: #2563eb;">Search ARRL →</a></p>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Questions?</h2>
+            <p>We're here to help! Contact us anytime:</p>
+            
+            <div class="contact-box">
+                <p><strong>For Classes:</strong> Denny Oestreich, Education Director<br>
+                <a href="mailto:OestreichD@AOL.com">OestreichD@AOL.com</a></p>
+                <p style="margin-top: 1rem;"><strong>For Exams:</strong> RARS VE Chair<br>
+                (Contact info available on registration page)</p>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <p><strong>Raleigh Amateur Radio Society</strong></p>
+        <p style="margin-top: 0.5rem;">Everyone welcome—membership not required for classes or testing</p>
+        <p style="margin-top: 1rem;">
+            <a href="https://www.rars.org">Visit RARS.org</a>
+        </p>
+        <p style="margin-top: 1rem; font-size: 0.9rem; opacity: 0.7;">
+            Updated October 2025
+        </p>
+    </footer>
+</body>
+</html>
